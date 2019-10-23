@@ -1,23 +1,15 @@
-# Apache, PHP, MySQL  & PHP MyAdmin Docker Image
+# CTF-EasySQLWAF (Web题目)
 
 ****A repository to build docker image with Apache, PHP, MySQL & PHP MyAdmin****
-
-## Prerequisites
-- Docker, Docker Compose
-- preferably  Git Bash or WSL
 
 ## Installation
 
 Clone or download the repository ***phpmysql***
 
 ```
-https://github.com/Tarunls/phpmysql.git
+git clone https://github.com/L-HeliantHuS/ctf-easysql -b master
 ```
 
-Run the following commands from ***phpmysql*** folder
-```
-mkdir db && mkdir db/data
-```
 ```
 echo "AddType application/x-httpd-php .html .htm" > web/src/html/.htaccess
 ```
@@ -30,16 +22,14 @@ once the docker build is complete run docker ps  command and check the container
 ```
 docker ps
 ```
-Launch the browser and go to http://localhost. If all goes well it should look like below.
-
-![alt text](php_mysql_connection_test.png "")
+Launch the browser and go to http://localhost:8081 to open index.
 
 Launch the broser and go to http://localhost:8080 to login to PHP MyAdmin.
 
 ## Default Values
 
 #### <u>Apache</u>
-- apache runs in port 80
+- apache runs in port 8081
 - apache /var/www/html is mapped to src/html
     
 #### <u>MySQL</u>
@@ -68,12 +58,3 @@ Modify the docker-compose.yml
 - modify **MYSQL_DATABASE** for root database name
 - modify **MYSQL_USER** for db user name
 - modify **MYSQL_PASSWORD** for db password
-  
-## Author
-- ****Tarun Sankar****
-
-## License
-
-This project is licensed under the GNU GPLv3 License
-
-****Do NOT distribute closed source versions of this project****
